@@ -21,7 +21,16 @@ namespace Exercicios01_1_29.WinForms
         {
             if (textBox_valor1.Text != "" && textBox_valor2.Text != "" && textBox_valor3.Text != "")
             {
-                label_resultado.Text = textBox_valor3.Text + " - " + textBox_valor2.Text + " - " + textBox_valor1.Text;
+                //label_resultado.Text = textBox_valor3.Text + " - " + textBox_valor2.Text + " - " + textBox_valor1.Text;
+                int a = int.Parse(textBox_valor1.Text);
+                int b = int.Parse(textBox_valor2.Text);
+                int c = int.Parse(textBox_valor3.Text);
+
+                int maior = Math.Max(a, Math.Max(b, c));
+                int menor = Math.Min(a, Math.Min(b, c));
+                int meio = (a + b + c) - (maior + menor);
+
+                label_resultado.Text = $"{maior} - {meio} - {menor}";
             }
         }
 
